@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
                 reduceTextSize()
             }
             findViewById<Button>(R.id.buttonMul).setOnClickListener {
-                txtCal.text = txtCal.text.toString() + "X"
+                txtCal.text = txtCal.text.toString() + "x"
                 reduceTextSize()
             }
             findViewById<Button>(R.id.buttonAdd).setOnClickListener {
@@ -114,7 +114,7 @@ class MainActivity : AppCompatActivity() {
     {
         var hashOp=hashMapOf<String,Int>()
         hashOp.put("/",2)
-        hashOp.put("X",2)
+        hashOp.put("x",2)
         hashOp.put("+",1)
         hashOp.put("-",1)
         var stackOperator=Stack<String>()
@@ -195,7 +195,7 @@ class MainActivity : AppCompatActivity() {
         for (i in 0 until outputArr.size) {
             val currEle = outputArr.get(i)
             //   val flag1= isDigit("622323") flag1) {
-            if (currEle=="+"||currEle=="-"||currEle=="X"||currEle=="/") {
+            if (currEle=="+"||currEle=="-"||currEle=="x"||currEle=="/") {
                 val op2 = stack.pop()
                 val op1 = stack.pop()
                 when (currEle) {
@@ -205,7 +205,7 @@ class MainActivity : AppCompatActivity() {
                         stack.push(op1 - op2)
                     "/" ->
                         stack.push(op1 / op2)
-                    "X" ->
+                    "x" ->
                         stack.push(op1 * op2)
                 }
             }
@@ -217,7 +217,7 @@ class MainActivity : AppCompatActivity() {
     }
     // to reduce and increse the size of the txtCal: TextView
     fun reduceTextSize() {
-        if (txtCal.text.length > 10){
+        if (txtCal.text.length > 8){
             txtCal.setTextSize(TypedValue.COMPLEX_UNIT_SP, 45f);
         }
         else{
